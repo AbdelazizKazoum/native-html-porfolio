@@ -1,0 +1,31 @@
+html {
+  font-size: 62.5%;
+  background-color: $bg-color;
+
+  &.sr .load-hidden {
+    visibility: hidden;
+  }
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  scroll-behavior: smooth;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: $bg-color;
+}
+::-webkit-scrollbar-thumb {
+  background: $secondary-color;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color;
+}
