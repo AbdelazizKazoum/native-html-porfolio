@@ -65,3 +65,11 @@ export const targetElements = [
     },
   },
 ];
+
+targetElements.push({
+  element: ".glow-card",
+  animation: {
+    delay: 400,
+    origin: "bottom",
+  },
+});
