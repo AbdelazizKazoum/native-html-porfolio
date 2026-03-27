@@ -73,3 +73,11 @@ targetElements.push({
     origin: "bottom",
   },
 });
+
+targetElements.push({
+  element: ".timeline-item",
+  animation: {
+    delay: 500,
+    origin: "bottom",
+  },
+});
