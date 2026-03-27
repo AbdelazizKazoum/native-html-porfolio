@@ -3,98 +3,72 @@
   color: $text-color;
   position: relative;
   z-index: 10;
+  padding: 10rem 0;
 
-  @include respond(tab-land) {
-    height: 100%;
+  @include respond(phone) {
+    padding: 5rem 0;
   }
 
-  .expertise-wrapper {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .expertise-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 3rem;
-    margin-top: 5rem;
-    padding: 0 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
 
+    @include respond(tab-port) {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+    }
+    
     @include respond(phone) {
-      grid-template-columns: 1fr;
-      padding: 0;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  .glow-card {
-    background-color: $bg-color-alt;
-    border-radius: 16px;
-    padding: 4rem 3rem;
+  .skill-card {
+    background-color: #111111; // Darker like the image
+    border-radius: 12px;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     z-index: 1;
-    text-align: left;
-
-    // The light effect hidden inside
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba($primary-color, 0.1), transparent 40%);
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      z-index: -1;
-      pointer-events: none;
-    }
 
     &:hover {
-      transform: translateY(-8px);
-      border-color: rgba($primary-color, 0.4);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba($primary-color, 0.2);
-
-      &::before {
-        opacity: 1;
-      }
+      transform: translateY(-5px);
+      background-color: #1a1a1a;
+      border-color: rgba(0, 255, 136, 0.2); // Subtle green highlight on hover
     }
 
     &__icon {
-      font-size: 3.5rem;
+      font-size: 5rem;
       margin-bottom: 2rem;
-      display: inline-block;
-      
-      // Gradient text effect for icons
-      background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
+      filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
     }
 
     &__title {
-      font-size: 2.4rem;
-      margin-bottom: 2rem;
-      font-weight: 700;
-      color: $white-color;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
     }
 
-    &__list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        color: $light-grey;
-        font-size: 1.6rem;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-
-        i {
-          color: $primary-color;
-          font-size: 1.2rem;
-          margin-right: 1.2rem;
-        }
-      }
+    &__percentage {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #00ff88; // Neon green
     }
   }
 }

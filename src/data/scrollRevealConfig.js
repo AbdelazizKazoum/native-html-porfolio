@@ -67,7 +67,7 @@ export const targetElements = [
 ];
 
 targetElements.push({
-  element: ".glow-card",
+  element: ".skill-card",
   animation: {
     delay: 400,
     origin: "bottom",
