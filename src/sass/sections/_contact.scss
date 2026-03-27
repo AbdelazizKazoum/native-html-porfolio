@@ -1,5 +1,9 @@
 #contact {
-  background: transparent;
+  background: radial-gradient(
+    circle at 80% 50%,
+    rgba($primary-color, 0.15) 0%,
+    transparent 40%
+  );
   padding: 12rem 0;
   color: $text-color;
   position: relative;
@@ -11,6 +15,7 @@
     max-width: 1250px;
     margin: 5rem auto 0 auto;
     padding: 0;
+
     @include respond(phone) {
       padding: 0 2rem;
     }
