@@ -12,13 +12,27 @@
   .container {
     max-width: 1200px;
     margin: 0 auto;
+    text-align: center; // Center title natively
+  }
+
+  .expertise-description {
+    max-width: 800px;
+    margin: 0 auto 5rem auto;
+    font-size: 1.8rem;
+    color: $text-color;
+    line-height: 1.6;
+
+    @include respond(phone) {
+      font-size: 1.6rem;
+      padding: 0 1.5rem;
+    }
   }
 
   .expertise-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 2rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
 
     @include respond(tab-port) {
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -27,12 +41,17 @@
     
     @include respond(phone) {
       grid-template-columns: repeat(2, 1fr);
+      padding: 0 1.5rem;
     }
   }
 
   .skill-card {
-    background-color: #111111; // Darker like the image
-    border-radius: 12px;
+    // Pro yet consistent design with the rest of the site's glassmorphism
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
     padding: 3rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -40,27 +59,32 @@
     justify-content: center;
     text-align: center;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     z-index: 1;
 
     &:hover {
-      transform: translateY(-5px);
-      background-color: #1a1a1a;
-      border-color: rgba(0, 255, 136, 0.2); // Subtle green highlight on hover
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba($primary-color, 0.4);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba($primary-color, 0.15);
     }
 
     &__icon {
       font-size: 5rem;
       margin-bottom: 2rem;
-      filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+      transition: transform 0.3s ease;
+    }
+
+    &:hover &__icon {
+      transform: scale(1.1);
     }
 
     &__title {
       font-size: 1.6rem;
       font-weight: 600;
-      color: #e2e8f0;
+      color: $white-color;
       margin-bottom: 1rem;
       letter-spacing: 0.5px;
     }
@@ -68,7 +92,7 @@
     &__percentage {
       font-size: 1.4rem;
       font-weight: 700;
-      color: #00ff88; // Neon green
+      color: $primary-color; // Using site's blue primary modern color instead of random neon green
     }
   }
 }
