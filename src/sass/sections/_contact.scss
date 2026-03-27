@@ -168,33 +168,32 @@
     }
 
     .submit-btn {
-      display: inline-block;
-      width: auto;
-      min-width: 180px;
-      text-align: center;
-      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      margin-top: 1.5rem;
       border: none;
       cursor: pointer;
       border-radius: 12px;
-      padding: 1.6rem 3rem;
+      padding: 1.8rem 3rem;
       font-size: 1.6rem;
-      font-weight: 600;
+      font-weight: 700;
       background: $primary-color;
-      color: #fff;
-      transition: all 0.3s ease;
-      text-transform: capitalize;
-      letter-spacing: 0.5px;
-      box-shadow: 0 10px 20px rgba($primary-color, 0.3);
+      color: $bg-color; // Ensures high contrast against the accent color
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba($primary-color, 0.3);
 
       &:hover {
-        background: darken($primary-color, 5%);
+        background: lighten($primary-color, 5%);
         transform: translateY(-2px);
-        box-shadow: 0 15px 25px rgba($primary-color, 0.4);
+        box-shadow: 0 8px 25px rgba($primary-color, 0.5);
       }
 
       &:active {
         transform: translateY(0);
-        box-shadow: 0 5px 10px rgba($primary-color, 0.3);
+        box-shadow: 0 4px 10px rgba($primary-color, 0.3);
       }
     }
   }
