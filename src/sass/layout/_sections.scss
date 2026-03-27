@@ -60,21 +60,31 @@ section {
     transition: color 0.3s ease;
     text-decoration: none;
 
-    &::after {
+    &::before {
       content: "";
       position: absolute;
       width: 0;
       height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: $primary-color;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(
+        90deg,
+        transparent,
+        $secondary-color 50%,
+        transparent
+      );
+      box-shadow: 0 0 10px 1px rgba($secondary-color, 0.5);
       transition: width 0.3s ease;
+      z-index: 1;
     }
 
-    &:hover {
-      color: $primary-color;
+    &:hover,
+    &.active {
+      color: $white-color;
+      text-shadow: 0 0 8px rgba($secondary-color, 0.4);
 
-      &::after {
+      &::before {
         width: 100%;
       }
     }
