@@ -173,32 +173,48 @@
     }
 
     .submit-btn {
-      display: flex;
+      display: inline-flex;
       justify-content: center;
       align-items: center;
       gap: 1rem;
-      width: 100%;
+      width: auto;
       margin-top: 1.5rem;
-      border: none;
+      border: 2px solid $primary-color;
+      background-color: transparent;
       cursor: pointer;
-      border-radius: 12px;
-      padding: 1.8rem 3rem;
+      border-radius: 4px;
+      padding: 1rem 3rem;
       font-size: 1.6rem;
       font-weight: 700;
-      background: $primary-color;
-      color: $bg-color; // Ensures high contrast against the accent color
+      color: $primary-color;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba($primary-color, 0.3);
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0px;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        background-color: $primary-color;
+        transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+      }
 
       &:hover {
-        background: lighten($primary-color, 5%);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba($primary-color, 0.5);
+        color: $bg-color;
+        text-decoration: none;
+
+        &::after {
+          width: 100%;
+        }
       }
 
       &:active {
         transform: translateY(0);
-        box-shadow: 0 4px 10px rgba($primary-color, 0.3);
       }
     }
   }
