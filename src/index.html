@@ -946,18 +946,72 @@
         <h2 class="section-title">Contact</h2>
 
         <div class="contact-wrapper load-hidden">
-          <p class="contact-wrapper__text">
-            Have a project in mind or want to collaborate? Feel free to reach
-            out!
-          </p>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            class="cta-btn cta-btn--resume"
-            href="mailto:contact@example.com"
-          >
-            Get in Touch
-          </a>
+          <div class="contact-grid">
+            <!-- Left Side: Contact Information -->
+            <div class="contact-info">
+              <p class="contact-info__text">
+                I'm always open to discussing new projects, collaborations, or opportunities. Feel free to reach out to me directly via phone, email, or through the contact form. I strive to respond promptly during business hours.
+              </p>
+
+              <div class="contact-details">
+                <div class="contact-detail">
+                  <i class="fa fa-map-marker"></i>
+                  <span>Rabat, Salé, Sale El Jadida, Morocco</span>
+                </div>
+                <div class="contact-detail">
+                  <i class="fa fa-phone"></i>
+                  <span>+212 636 739 071</span>
+                </div>
+                <div class="contact-detail">
+                  <i class="fa fa-envelope-o"></i>
+                  <span>abdelazizkazoum1@gmail.com</span>
+                </div>
+                <div class="contact-detail">
+                  <i class="fa fa-globe"></i>
+                  <span>www.kazoum.me</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <div class="contact-form-container">
+              <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Name"
+                    required
+                    class="form-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                    required
+                    class="form-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="5"
+                    placeholder="Message"
+                    required
+                    class="form-input"
+                  ></textarea>
+                </div>
+                <button type="submit" class="cta-btn cta-btn--hero" style="width: 100%; margin-top: 2rem; font-size: 1.6rem; font-family: inherit; cursor: pointer;">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </section>
