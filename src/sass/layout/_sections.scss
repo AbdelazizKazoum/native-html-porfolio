@@ -18,12 +18,19 @@ section {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba($bg-color, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
   padding: 1.5rem 0;
   transition: all 0.3s ease;
+
+  &.navbar-scrolled {
+    background-color: rgba($bg-color, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+  }
 }
 
 .nav-container {

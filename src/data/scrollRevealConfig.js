@@ -1,7 +1,7 @@
 export const defaultProps = {
   easing: "cubic-bezier(0.5, 0, 0, 1)",
   distance: "30px",
-  duration: 650,
+  duration: 780,
   desktop: true,
   mobile: true,
 };
@@ -9,6 +9,7 @@ export const defaultProps = {
 const FAST_DELAY = 140;
 const MEDIUM_DELAY = 220;
 const HERO_DELAY = 280;
+const STAGGER_INTERVAL = 150;
 
 export const targetElements = [
   {
@@ -51,6 +52,7 @@ export const targetElements = [
     element: ".project-wrapper__text",
     animation: {
       delay: MEDIUM_DELAY,
+      interval: STAGGER_INTERVAL,
       origin: window.innerWidth > 768 ? "left" : "bottom",
     },
   },
@@ -58,6 +60,7 @@ export const targetElements = [
     element: ".project-wrapper__image",
     animation: {
       delay: HERO_DELAY,
+      interval: STAGGER_INTERVAL,
       origin: window.innerWidth > 768 ? "right" : "bottom",
     },
   },
@@ -74,6 +77,7 @@ targetElements.push({
   element: ".skill-card",
   animation: {
     delay: FAST_DELAY,
+    interval: STAGGER_INTERVAL,
     origin: "bottom",
   },
 });
@@ -82,6 +86,7 @@ targetElements.push({
   element: ".timeline-item",
   animation: {
     delay: FAST_DELAY,
+    interval: STAGGER_INTERVAL,
     origin: "bottom",
   },
 });

@@ -1,8 +1,18 @@
 export default function initActiveMenu() {
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-links a");
+  const navbar = document.querySelector(".navbar-glass");
+
+  const updateNavbarState = () => {
+    if (!navbar) return;
+
+    navbar.classList.toggle("navbar-scrolled", window.scrollY > 16);
+  };
+
+  updateNavbarState();
 
   window.addEventListener("scroll", () => {
+    updateNavbarState();
     let current = "";
 
     sections.forEach((section) => {

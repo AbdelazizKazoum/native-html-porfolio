@@ -59,7 +59,10 @@
       }
 
       & .thumbnail {
-        border: none; border-radius: 16px; overflow: hidden;
+        position: relative;
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
         transition: all 0.2s ease-out;
         box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
@@ -71,6 +74,147 @@
           border: 1px solid $light-grey;
           box-shadow: none;
           margin-bottom: 3.2rem;
+        }
+      }
+
+      .project-confidential-badge {
+        position: absolute;
+        top: 1.4rem;
+        right: 1.4rem;
+        z-index: 2;
+        padding: 0.7rem 1.2rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: $white-color;
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 999px;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+      }
+
+      .confidential-project-visual {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: linear-gradient(
+          140deg,
+          #0a1125 0%,
+          #121d3e 45%,
+          #1f2a59 100%
+        );
+      }
+
+      .confidential-project-glow {
+        position: absolute;
+        inset: auto -4rem -7rem auto;
+        width: 20rem;
+        height: 20rem;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba($secondary-color, 0.38),
+          rgba($secondary-color, 0)
+        );
+        filter: blur(10px);
+      }
+
+      .confidential-project-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.06),
+          rgba(0, 0, 0, 0.25)
+        );
+      }
+
+      .confidential-project-grid {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0.06) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+        background-size: 28px 28px;
+        mask-image: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.9)
+        );
+        -webkit-mask-image: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 0.9)
+        );
+      }
+
+      .confidential-project-content {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        padding: 3.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .confidential-project-lock {
+        margin-bottom: 1.2rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.26);
+        border-radius: 999px;
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .confidential-project-title {
+        margin: 0 0 0.7rem;
+        color: $white-color;
+        font-size: 2.8rem;
+        font-weight: 800;
+      }
+
+      .confidential-project-subtitle {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.35rem;
+        letter-spacing: 0.03em;
+      }
+
+      .confidential-project-tags {
+        margin-top: 1.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+
+        span {
+          padding: 0.45rem 0.95rem;
+          font-size: 1.1rem;
+          color: rgba(255, 255, 255, 0.9);
+          border: 1px solid rgba(255, 255, 255, 0.22);
+          border-radius: 999px;
+          background: rgba(255, 255, 255, 0.08);
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+        }
+      }
+
+      @include respond(phone) {
+        .confidential-project-content {
+          padding: 2.2rem;
+        }
+
+        .confidential-project-title {
+          font-size: 2.2rem;
         }
       }
     }
