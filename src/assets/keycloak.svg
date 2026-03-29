@@ -1,0 +1,30 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Keycloak">
+  <defs>
+    <clipPath id="kc-hex-clip">
+      <polygon points="170,68 342,68 432,224 342,380 170,380 80,224" />
+    </clipPath>
+    <linearGradient id="kc-cyan-a" x1="132" y1="116" x2="236" y2="338" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0D88AC"/>
+      <stop offset="1" stop-color="#19B6DC"/>
+    </linearGradient>
+    <linearGradient id="kc-cyan-b" x1="276" y1="116" x2="380" y2="338" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#47C4E7"/>
+      <stop offset="1" stop-color="#10A9D1"/>
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#kc-hex-clip)">
+    <rect x="56" y="56" width="400" height="92" fill="#535355"/>
+    <rect x="56" y="148" width="400" height="96" fill="#D9D9DB"/>
+    <rect x="56" y="244" width="400" height="64" fill="#AAAAAC"/>
+    <rect x="56" y="308" width="400" height="96" fill="#5A5B5D"/>
+  </g>
+
+  <polygon points="188,116 230,116 168,224 230,332 188,332 126,224" fill="url(#kc-cyan-a)"/>
+  <polygon points="168,224 188,116 214,116 184,224" fill="#1BAFD4" fill-opacity="0.55"/>
+  <polygon points="168,224 230,332 204,332 184,224" fill="#0E8EB4" fill-opacity="0.55"/>
+
+  <polygon points="282,116 324,116 386,224 324,332 282,332 344,224" fill="url(#kc-cyan-b)"/>
+  <polygon points="344,224 308,116 334,116 364,224" fill="#78DBF1" fill-opacity="0.45"/>
+  <polygon points="344,224 364,224 334,332 308,332" fill="#0997BF" fill-opacity="0.6"/>
+</svg>
