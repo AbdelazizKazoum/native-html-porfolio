@@ -21,14 +21,36 @@
 
       @include respond(phone) {
         margin-bottom: 4rem;
+        display: flex;
+        flex-direction: column;
+
+        .col-lg-4,
+        .col-lg-8 {
+          display: contents;
+        }
       }
     }
 
     &__text {
       text-align: left;
 
+      > a.cta-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        min-width: 18rem;
+        margin: 1rem auto 0;
+        text-align: center;
+      }
+
+      > a.cta-btn + a.cta-btn {
+        margin-top: 1.2rem;
+      }
+
       @include respond(phone) {
         margin-bottom: 2.5rem !important;
+        display: contents;
       }
       @include respond(tab-land) {
         margin-bottom: 4.8rem;
@@ -41,6 +63,21 @@
 
         @include respond(phone) {
           font-size: 2rem;
+          display: block;
+          order: 1;
+          margin-bottom: 1.2rem;
+        }
+      }
+
+      @include respond(phone) {
+        > div {
+          order: 3;
+        }
+
+        > a {
+          order: 4;
+          width: min(100%, 28rem);
+          margin: 0.9rem auto 0;
         }
       }
 
@@ -58,6 +95,12 @@
         margin: 0;
       }
 
+      @include respond(phone) {
+        order: 2;
+        width: 100%;
+        margin: 0 0 2rem;
+      }
+
       & .thumbnail {
         position: relative;
         border: none;
@@ -73,7 +116,7 @@
         @include respond(phone) {
           border: 1px solid $light-grey;
           box-shadow: none;
-          margin-bottom: 3.2rem;
+          margin-bottom: 0;
         }
       }
 
@@ -210,11 +253,46 @@
 
       @include respond(phone) {
         .confidential-project-content {
-          padding: 2.2rem;
+          padding: 1.8rem;
+        }
+
+        .project-confidential-badge {
+          top: 1rem;
+          right: 1rem;
+          font-size: 0.9rem;
+          padding: 0.5rem 0.8rem;
+        }
+
+        .confidential-project-visual {
+          aspect-ratio: auto;
+          min-height: 23rem;
+        }
+
+        .confidential-project-lock {
+          margin-bottom: 0.8rem;
+          font-size: 0.9rem;
         }
 
         .confidential-project-title {
-          font-size: 2.2rem;
+          font-size: 1.8rem;
+          line-height: 1.2;
+        }
+
+        .confidential-project-subtitle {
+          font-size: 1.1rem;
+          line-height: 1.4;
+        }
+
+        .confidential-project-tags {
+          margin-top: 1rem;
+          gap: 0.5rem;
+          max-height: 5.4rem;
+          overflow: hidden;
+
+          span {
+            padding: 0.32rem 0.62rem;
+            font-size: 0.9rem;
+          }
         }
       }
     }
