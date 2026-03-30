@@ -34,20 +34,6 @@
     &__text {
       text-align: left;
 
-      > a.cta-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: fit-content;
-        min-width: 18rem;
-        margin: 1rem auto 0;
-        text-align: center;
-      }
-
-      > a.cta-btn + a.cta-btn {
-        margin-top: 1.2rem;
-      }
-
       @include respond(phone) {
         margin-bottom: 2.5rem !important;
         display: contents;
@@ -76,8 +62,7 @@
 
         > a {
           order: 4;
-          width: min(100%, 28rem);
-          margin: 0.9rem auto 0;
+          margin-top: 0.4rem;
         }
       }
 
